@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Social Media</title>
+
+    <link rel="stylesheet" href="Twitter.css">
+    <link rel="stylesheet" href="face book.css">
+    <link rel="stylesheet" href="Snapchat.css">
+    <link rel="stylesheet" href="WhatsApp.css">
+    <link rel="stylesheet" href="Instagram.css">
+    <link rel="stylesheet" href="LinkedIn.css">
+
+</head>
+<div class="header">
+<header><h1>📱 SocialMedia </h1></header>
+</div>
+<link rel="stylesheet" href="micbutton.css">
+<style>
+  .header {
+      width: 100%;
+      text-align: center;
+      padding: 20px 0;
+      background: rgba();
+      color: white;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+    }
+    h1{
+      font-size: 6rem;
+      margin-bottom: 30px;
+      text-shadow: 2px 2px 8px
+    rgba(0,0,0,5);
+    }
+
+    .button-container {
+      display: flex;
+      gap: 1px;
+      margin-top: 50px;
+    }
+
+   body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #1c1c1c);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+    #cat {
+      position: fixed;
+      width: 100px;
+      height: 60px;
+      background: url("cat_idle.gif") center/contain no-repeat;
+      top: 10px;
+      right: 10px;
+      cursor: grab;
+      z-index: 9999;
+      transition: background 0.3s ease;
+    }
+
+    #cat.fly {
+      background: url("cat_fly.gif") center/contain no-repeat;
+      cursor: grabbing;
+    }
+
+    #cat {
+      user-select: none;   /* prevent text/image selection */
+      -webkit-user-drag: none;
+      touch-action: none;  /* prevent scrolling while dragging */
+    }
+
+    #quote {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      color: white;
+      font-size: 18px;
+      font-style: italic;
+     }
+
+</style>
+<body>
+<div class="button-container">
+    <a href="https://x.com/" target="_blank" class="Twitter">
+        <i class="fab fa-Twitter"></i>
+        X
+    </a>
+
+    <a href="https://www.facebook.com/" target="_blank" class="JOIN">
+        <i class="fab fa-face Book"></i>
+      Facebook
+    </a>
+
+     <a href="https://www.snapchat.com/" target="_blank" class="Snapchat">
+        <i class="fab fa-Snapchat"></i>
+      Snapchat
+    </a>
+
+     <a href="https://www.whatsapp.com/" target="_blank" class="WhatsApp">
+        <i class="fab fa-WhatsApp"></i>
+      WhatsApp
+    </a>
+
+     <a href="https://instagram.com/" target="_blank" class="Instagram">
+        <i class="fab fa-Instagram"></i>
+      <span class="i1">
+          I
+      </span>
+      <span class="i2">
+          n
+      </span>
+      <span class="i3">
+          s
+      </span>
+      <span class="i4">
+          t
+      </span>
+      <span class="i5">
+          a
+      </span>
+      <span class="i6">
+          g
+      </span>
+      <span class="i7">
+          r
+      </span>
+      <span class="i8">
+          a
+      </span>
+      <span class="i9">
+          m
+      </span>
+    </a>
+    
+
+     <a href="https://in.linkedin.com/" target="_blank" class="LinkedIn">
+        <i class="fab fa-LinkedIn"></i>
+      LinkedIn
+    </a>
+</div>
+<div id="cat"></div>
+<script src="cat.js"></script> 
+<div id="quote"></div>
+<script src="socialfacts.js"></script>
+<button onclick="startListening()" class="micbutton">🎙️</button>
+<script src="voicecontrol.js"></script>
+</body>
+</html>

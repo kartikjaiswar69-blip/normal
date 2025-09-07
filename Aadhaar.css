@@ -1,0 +1,31 @@
+.Aadhaar {
+            display: inline-flex;
+            align-items: center;
+            padding: 8px 18px;
+            margin-right: 40px;
+            background: linear-gradient(to right, #FFCC00, #FF0000);
+            color: rgb(255, 255, 255);
+            text-decoration: none;
+            border: none;
+            border-radius: 50px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            box-shadow: 3px 3px 3px rgb(167, 161, 161);
+            padding: 5px 5px;
+            font-size: 25px;
+        }
+
+        .Aadhaar:active {
+            box-shadow: 1px 1px 1px rgb(167, 161, 161);
+            transform: translate(5px , 5px );
+        }
+
+        .Aadhaar:hover {
+            background: linear-gradient(to right, #FF0000, #FFCC00);  
+            color: white;
+        }
+
+        .Aadhaar i {
+            font-size: 12px;
+        }

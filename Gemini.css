@@ -1,0 +1,33 @@
+.Gemini {
+            display: inline-flex;
+            align-items: center;
+            padding: 8px 18px;
+            margin-right: 50px;
+            background: linear-gradient(90deg, #4295F4, #9333EA, #EC4899);
+            color: white;
+            text-decoration: none;
+            border: none;
+            border-radius: 50px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            box-shadow: 3px 3px 3px rgb(167, 161, 161);
+            padding: 5px 5px;
+            font-size: 25px;
+        }
+
+        .Gemini:active {
+            box-shadow: 1px 1px 1px rgb(167, 161, 161);
+            transform: translate(5px , 5px );
+        }
+
+        .Gemini:hover {
+             background: linear-gradient(90deg, #EC4899,#9333EA, #4295F4);  
+            color: #121314; 
+        }
+
+        .Gemini i {
+            font-size: 12px;
+        }
+
+         

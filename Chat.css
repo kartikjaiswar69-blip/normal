@@ -1,0 +1,31 @@
+.Chat {
+            display: inline-flex;
+            align-items: center;
+            padding: 8px 18px;
+            margin-right: 50px;
+            background-color: #10A37F;
+            color: white;
+            text-decoration: none;
+            border: none;
+            border-radius: 50px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            box-shadow: 3px 3px 3px rgb(167, 161, 161);
+            padding: 5px 5px;
+            font-size: 25px;
+        }
+
+        .Chat:active {
+            box-shadow: 1px 1px 1px rgb(167, 161, 161);
+            transform: translate(5px , 5px );
+        }
+
+        .Chat:hover {
+            background-color: #0E8C6E;  
+            color: #ffffff;
+        }
+
+        .Chat i {
+            font-size: 12px;
+        }

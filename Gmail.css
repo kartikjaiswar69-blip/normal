@@ -1,0 +1,53 @@
+.Gmail {
+            display: inline-flex;
+            align-items: center;
+            gap:  px;
+            padding: 8px 20px;
+            background-color: #2e4f83 ;
+            color: white;
+            margin-right: 30px;
+            text-decoration: none;
+            border: none;
+            border-radius: 50px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            box-shadow: 3px 3px 3px rgb(167, 161, 161);
+            padding: 5px 5px;
+            font-size: 25px;
+        }
+
+        .Gmail:active {
+            box-shadow: 1px 1px 1px rgb(167, 161, 161);
+            transform: translate(5px , 5px );
+        }
+
+        .Gmail:hover {
+            background-color: #121314 ;
+           
+        }
+
+        .Gmail i {
+            font-size: 18px;
+        }
+        
+        .m1
+        {
+            color: #4285F4;
+        }
+        .m2
+        {
+            color: #EA4335;
+        }
+        .m3
+        {
+            color: #FBBC05;
+        }
+        .m4
+        {
+            color: #4285F4;
+        }
+        .m5
+        {
+            color: #34A853;
+        }
