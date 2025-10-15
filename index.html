@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>One Click</title>
+  <div class="header">
+  <header><h1>One click</h1></header>
+</div>
+<link rel="stylesheet" href="micbutton.css"> 
+
+  <style>
+/* ======= Global Setup ======= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at 30% 30%, #001f3f, #000);
+  overflow: hidden;
+  position: relative;
+  color: white;
+}
+
+/* ======= Animated Background ======= */
+body::before,
+body::after {
+  content: "";
+  position: absolute;
+  width: 800px;
+  height: 800px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #00f5ff, #ff00f5, #00ff88);
+  filter: blur(150px);
+  opacity: 0.2;
+  animation: rotateGlow 20s linear infinite;
+  z-index: 0;
+}
+
+body::after {
+  animation-delay: -10s;
+  background: linear-gradient(45deg, #00e5ff, #ff0055, #ffaa00);
+}
+
+@keyframes rotateGlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* ======= Header ======= */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  padding: 25px 0;
+  backdrop-filter: blur(15px);
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+h1 {
+  font-size: 4.5rem;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  text-shadow: 0 0 20px #00e5ff, 0 0 40px #00e5ff;
+  animation: flicker 3s infinite;
+}
+
+@keyframes flicker {
+  0%, 18%, 22%, 25%, 53%, 57%, 100% { opacity: 1; }
+  20%, 24%, 55% { opacity: 0.4; }
+}
+
+/* ======= Button Container ======= */
+.button-container {
+  display: flex;
+  gap: 25px;
+  margin-top: 120px;
+  flex-wrap: wrap;
+  justify-content: center;
+  z-index: 10;
+}
+
+.button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 25px;
+  font-size: 20px;
+  text-transform: uppercase;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 50px;
+  color: #00f5ff;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50px;
+  background: linear-gradient(90deg, #00e5ff, #ff00f5, #00ff88);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: -1;
+}
+
+.button:hover::before {
+  opacity: 1;
+  filter: blur(8px);
+}
+
+.button:hover {
+  transform: translateY(-6px) scale(1.05);
+  color: #fff;
+  box-shadow: 0 0 25px rgba(0,255,255,0.7);
+}
+
+/* ======= Mic Button ======= */
+.micbutton {
+  position: fixed;
+  bottom: 60px;
+  right: 60px;
+  background: linear-gradient(145deg, #00e5ff, #ff00f5);
+  border: none;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  font-size: 32px;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.6);
+  transition: all 0.3s ease;
+  animation: pulse 2s infinite;
+  z-index: 1000;
+}
+
+.micbutton:hover {
+  transform: scale(1.2) rotate(10deg);
+  box-shadow: 0 0 50px rgba(255, 0, 255, 0.7);
+}
+
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 20px #00e5ff; }
+  50% { box-shadow: 0 0 60px #ff00f5; }
+}
+/* ======= Flying Cat ======= */
+#cat {
+  position: fixed;
+  width: 110px;
+  height: 90px;
+  top: 15px;
+  right: 20px;
+  background: url("cat_idle.gif") center/contain no-repeat;
+  cursor: grab;
+  z-index: 2000;
+  user-select: none;
+  -webkit-user-drag: none;
+  touch-action: none;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  filter: drop-shadow(0 0 8px #00e5ff);
+}
+
+#cat:hover {
+  transform: scale(1.2) rotate(10deg);
+  filter: drop-shadow(0 0 25px #ff00f5);
+}
+
+#cat.fly {
+  background: url("cat_fly.gif") center/contain no-repeat;
+  cursor: grabbing;
+  filter: drop-shadow(0 0 25px #00ffcc);
+}
+
+/* Flying Path Animation */
+@keyframes flyCat {
+  0%   { transform: translate(0px, 0px) rotate(0deg); }
+  25%  { transform: translate(-40px, -30px) rotate(-10deg); }
+  50%  { transform: translate(-60px, 10px) rotate(10deg); }
+  75%  { transform: translate(40px, -20px) rotate(-5deg); }
+  100% { transform: translate(0px, 0px) rotate(0deg); }
+}
+
+
+/* ======= Quotes ======= */
+#quote {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: #00f5ff;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  text-shadow: 0 0 10px rgba(0,255,255,0.7);
+  animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateX(-50%) translateY(20px); }
+  to { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+/* ======= Mic Error ======= */
+#micError {
+  position: fixed;
+  bottom: 110px;
+  right: 30px;
+  background: rgba(255, 60, 60, 0.3);
+  border: 1px solid rgba(255,255,255,0.3);
+  padding: 10px 18px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.6);
+  color: white;
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+#micError.show {
+  opacity: 1;
+  transform: translateY(-10px);
+}
+</style>
+
+  </style>
+</head>
+<body>  
+
+<div id="cat"></div>
+<script src="cat.js"></script>
+<div id="quote"></div>
+<script src="quote.js"></script>
+
+  <div class="button-container">
+    <button onclick="window.location.href='Entertainment.html'" class="button">🎬<span>Entertainment</span></button>
+    <button onclick="window.location.href='GoogleApps.html'" class="button"><img src="Google_logo.png" alt="Google" width="24" height="24">Google<span>Apps</span></button>
+    <button onclick="window.location.href='SocialMedia.html'" class="button">📱<span>Social</span><span>Media</span></button>
+    <button onclick="window.location.href='HelpLine.html'" class="button">🏛️<span>Government</span><span>Help</span></button>
+    <button onclick="window.location.href='AI.html'" class="button">🧰<span>Tools</span></button>
+  </div>
+<button onclick="startListening()" class="micbutton">🎙️</button>
+<script src="voicecontrol.js"></script>
+
+<div id="micError" class="hidden"></div>
+
+  
+</body>
+</html>
